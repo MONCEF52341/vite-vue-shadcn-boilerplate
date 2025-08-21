@@ -4,6 +4,7 @@ import CounterPage from '@/pages/CounterPage.vue'
 import HomePage from '@/pages/HomePage.vue'
 import NotFoundPage from '@/pages/NotFoundPage.vue'
 import TicTacToePage from '@/pages/TicTacToePage.vue'
+import TodosPage from '@/pages/TodosPage.vue'
 import { useAuthStore } from '@/stores/auth'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -15,6 +16,7 @@ const router = createRouter({
     { path: '/counter', name: 'counter', component: CounterPage, meta: { requiresAuth: true } },
     { path: '/calculator', name: 'calculator', component: CalculatorPage },
     { path: '/tic-tac-toe', name: 'tic-tac-toe', component: TicTacToePage },
+    { path: '/todos', name: 'todos', component: TodosPage },
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundPage },
   ],
 })

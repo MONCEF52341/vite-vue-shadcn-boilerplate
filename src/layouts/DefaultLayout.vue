@@ -36,6 +36,9 @@ async function handleAuthClick() {
           <Button asChild variant="outline">
             <RouterLink to="/tic-tac-toe">Tic-Tac-Toe</RouterLink>
           </Button>
+          <Button asChild variant="outline">
+            <RouterLink to="/todos">Todos</RouterLink>
+          </Button>
         </nav>
         <div class="flex items-center gap-2">
           <Button @click="handleAuthClick">{{ isAuthenticated ? "Logout" : "Login" }}</Button>
