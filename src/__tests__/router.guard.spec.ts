@@ -17,5 +17,3 @@ describe('Router Guard', () => {
     expect(router.currentRoute.value.name).toBe('counter')
   })
 })
-
-

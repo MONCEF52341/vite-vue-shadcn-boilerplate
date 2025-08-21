@@ -22,16 +22,28 @@ function setFilter(f: TodoFilter) {
 
     <div class="flex items-center justify-between">
       <div class="flex gap-2">
-        <Button :variant="todo.filter === 'all' ? 'default' : 'outline'" size="sm" @click="setFilter('all')">Tous ({{ todo.allCount }})</Button>
-        <Button :variant="todo.filter === 'active' ? 'default' : 'outline'" size="sm" @click="setFilter('active')">Actifs ({{ todo.activeCount }})</Button>
-        <Button :variant="todo.filter === 'completed' ? 'default' : 'outline'" size="sm" @click="setFilter('completed')">Terminés ({{ todo.completedCount }})</Button>
+        <Button
+          :variant="todo.filter === 'all' ? 'default' : 'outline'"
+          size="sm"
+          @click="setFilter('all')"
+          >Tous ({{ todo.allCount }})</Button
+        >
+        <Button
+          :variant="todo.filter === 'active' ? 'default' : 'outline'"
+          size="sm"
+          @click="setFilter('active')"
+          >Actifs ({{ todo.activeCount }})</Button
+        >
+        <Button
+          :variant="todo.filter === 'completed' ? 'default' : 'outline'"
+          size="sm"
+          @click="setFilter('completed')"
+          >Terminés ({{ todo.completedCount }})</Button
+        >
       </div>
       <Button variant="secondary" size="sm" @click="todo.clearCompleted">Effacer terminés</Button>
     </div>
 
     <TodoList :items="todo.filteredTodos" @toggle="todo.toggleTodo" @remove="todo.removeTodo" />
   </div>
-  
 </template>
-
-

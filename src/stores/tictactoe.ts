@@ -53,9 +53,7 @@ export const useTicTacToeStore = defineStore('tictactoe', () => {
   }
 
   function checkWinner(player: Player): boolean {
-    return WIN_PATTERNS.some((pattern) =>
-      pattern.every((idx) => board.value[idx] === player),
-    )
+    return WIN_PATTERNS.some((pattern) => pattern.every((idx) => board.value[idx] === player))
   }
 
   return {
@@ -68,5 +66,3 @@ export const useTicTacToeStore = defineStore('tictactoe', () => {
     makeMove,
   }
 })
-
-

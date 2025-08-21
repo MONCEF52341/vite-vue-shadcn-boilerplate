@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 
 const emit = defineEmits<{
   (e: 'digit', value: string): void
@@ -11,8 +11,12 @@ const emit = defineEmits<{
   (e: 'percent'): void
 }>()
 
-function onDigit(d: string) { emit('digit', d) }
-function onOp(op: '+' | '-' | '×' | '÷') { emit('op', op) }
+function onDigit(d: string) {
+  emit('digit', d)
+}
+function onOp(op: '+' | '-' | '×' | '÷') {
+  emit('op', op)
+}
 </script>
 
 <template>
@@ -41,7 +45,4 @@ function onOp(op: '+' | '-' | '×' | '÷') { emit('op', op) }
     <Button @click="emit('dot')">.</Button>
     <Button variant="secondary" @click="emit('eq')">=</Button>
   </div>
-  
 </template>
-
-

@@ -19,7 +19,4 @@ const calc = useCalculatorStore()
       @percent="calc.percent"
     />
   </div>
-  
 </template>
-
-

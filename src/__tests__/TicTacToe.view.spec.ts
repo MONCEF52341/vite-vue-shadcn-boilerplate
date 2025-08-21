@@ -16,5 +16,3 @@ describe('TicTacToe View', () => {
     expect(wrapper.text()).toContain('Victoire de X')
   })
 })
-
-

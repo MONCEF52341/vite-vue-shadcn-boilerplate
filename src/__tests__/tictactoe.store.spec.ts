@@ -34,5 +34,3 @@ describe('TicTacToe Store', () => {
     expect(t.isFinished).toBe(true)
   })
 })
-
-

@@ -16,5 +16,3 @@ describe('Counter Store', () => {
     expect(store.doubleCount).toBe(2)
   })
 })
-
-

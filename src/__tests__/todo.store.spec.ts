@@ -21,9 +21,9 @@ describe('Todo Store', () => {
     const id = todo.todos[0].id
     todo.toggleTodo(id)
     todo.setFilter('active')
-    expect(todo.filteredTodos.every(t => !t.completed)).toBe(true)
+    expect(todo.filteredTodos.every((t) => !t.completed)).toBe(true)
     todo.setFilter('completed')
-    expect(todo.filteredTodos.every(t => t.completed)).toBe(true)
+    expect(todo.filteredTodos.every((t) => t.completed)).toBe(true)
   })
 
   it('clears completed', () => {
@@ -35,5 +35,3 @@ describe('Todo Store', () => {
     expect(todo.completedCount).toBe(0)
   })
 })
-
-

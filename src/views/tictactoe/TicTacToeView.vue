@@ -14,7 +14,4 @@ const ttt = useTicTacToeStore()
       <Button variant="secondary" @click="ttt.reset">Rejouer</Button>
     </div>
   </div>
-  
 </template>
-
-

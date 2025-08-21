@@ -51,5 +51,3 @@ describe('Calculator Store', () => {
     expect(calc.displayValue).toBe('Error')
   })
 })
-
-

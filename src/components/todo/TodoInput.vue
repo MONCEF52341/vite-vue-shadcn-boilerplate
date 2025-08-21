@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button';
-import { ref } from 'vue';
+import { Button } from '@/components/ui/button'
+import { ref } from 'vue'
 
 const emit = defineEmits<{ (e: 'submit', title: string): void }>()
 const title = ref('')
@@ -31,7 +31,4 @@ function onKeydown(e: KeyboardEvent) {
     />
     <Button @click="handleSubmit">Ajouter</Button>
   </div>
-  
 </template>
-
-

@@ -31,5 +31,3 @@ describe('Calculator View', () => {
     expect(wrapper.text()).toContain('Error')
   })
 })
-
-

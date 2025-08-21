@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <section class="space-y-4">
@@ -12,7 +11,4 @@
       <li>Tests unitaires avec Vitest</li>
     </ul>
   </section>
-  
 </template>
-
-

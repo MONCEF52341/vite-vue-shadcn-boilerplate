@@ -14,5 +14,3 @@ describe('Counter View', () => {
     expect(wrapper.get('[data-test="double"]').text()).toBe('2')
   })
 })
-
-

@@ -12,5 +12,3 @@ describe('Todos View', () => {
     expect(wrapper.text()).toContain('New Task')
   })
 })
-
-
