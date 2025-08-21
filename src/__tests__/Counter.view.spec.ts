@@ -1,4 +1,4 @@
-import Counter from '@/views/Counter.vue'
+import Counter from '@/views/counter/CounterView.vue'
 import { mount } from '@vue/test-utils'
 import { createPinia } from 'pinia'
 import { describe, expect, it } from 'vitest'
