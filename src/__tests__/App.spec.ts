@@ -1,8 +1,8 @@
+import App from '@/App.vue';
 import router from '@/router';
 import { mount } from '@vue/test-utils';
 import { createPinia } from 'pinia';
 import { describe, expect, it } from 'vitest';
-import App from '../App.vue';
 
 describe('App', () => {
   it('renders layout and navigation', async () => {
