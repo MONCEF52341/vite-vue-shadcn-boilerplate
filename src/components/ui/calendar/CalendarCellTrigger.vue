@@ -1,21 +1,25 @@
 <script lang="ts" setup>
-import type { CalendarCellTriggerProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
-import { reactiveOmit } from '@vueuse/core'
-import { CalendarCellTrigger, useForwardProps } from 'reka-ui'
-import { cn } from '@/lib/utils'
-import { buttonVariants } from '@/components/ui/button'
+import type { CalendarCellTriggerProps } from 'reka-ui';
+import type { HTMLAttributes } from 'vue';
+import { reactiveOmit } from '@vueuse/core';
+import { CalendarCellTrigger, useForwardProps } from 'reka-ui';
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
 
 const props = withDefaults(
-  defineProps<CalendarCellTriggerProps & { class?: HTMLAttributes['class'] }>(),
+  defineProps<
+    CalendarCellTriggerProps & {
+      class?: HTMLAttributes['class'];
+    }
+  >(),
   {
     as: 'button',
-  },
-)
+  }
+);
 
-const delegatedProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, 'class');
 
-const forwardedProps = useForwardProps(delegatedProps)
+const forwardedProps = useForwardProps(delegatedProps);
 </script>
 
 <template>
@@ -23,7 +27,9 @@ const forwardedProps = useForwardProps(delegatedProps)
     data-slot="calendar-cell-trigger"
     :class="
       cn(
-        buttonVariants({ variant: 'ghost' }),
+        buttonVariants({
+          variant: 'ghost',
+        }),
         'size-8 p-0 font-normal aria-selected:opacity-100 cursor-default',
         '[&[data-today]:not([data-selected])]:bg-accent [&[data-today]:not([data-selected])]:text-accent-foreground',
         // Selected
@@ -34,7 +40,7 @@ const forwardedProps = useForwardProps(delegatedProps)
         'data-[unavailable]:text-destructive-foreground data-[unavailable]:line-through',
         // Outside months
         'data-[outside-view]:text-muted-foreground',
-        props.class,
+        props.class
       )
     "
     v-bind="forwardedProps"

@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
 
-defineProps<{ value: 'X' | 'O' | null }>()
-defineEmits<{ (e: 'click'): void }>()
+defineProps<{
+  value: 'X' | 'O' | null;
+}>();
+defineEmits<{
+  (e: 'click'): void;
+}>();
 </script>
 
 <template>

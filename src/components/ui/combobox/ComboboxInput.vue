@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import type { ComboboxInputEmits, ComboboxInputProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
-import { reactiveOmit } from '@vueuse/core'
-import { SearchIcon } from 'lucide-vue-next'
-import { ComboboxInput, useForwardPropsEmits } from 'reka-ui'
-import { cn } from '@/lib/utils'
+import type { ComboboxInputEmits, ComboboxInputProps } from 'reka-ui';
+import type { HTMLAttributes } from 'vue';
+import { reactiveOmit } from '@vueuse/core';
+import { SearchIcon } from 'lucide-vue-next';
+import { ComboboxInput, useForwardPropsEmits } from 'reka-ui';
+import { cn } from '@/lib/utils';
 
 defineOptions({
   inheritAttrs: false,
-})
+});
 
 const props = defineProps<
   ComboboxInputProps & {
-    class?: HTMLAttributes['class']
+    class?: HTMLAttributes['class'];
   }
->()
+>();
 
-const emits = defineEmits<ComboboxInputEmits>()
+const emits = defineEmits<ComboboxInputEmits>();
 
-const delegatedProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, 'class');
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(delegatedProps, emits);
 </script>
 
 <template>
@@ -31,10 +31,13 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       :class="
         cn(
           'placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50',
-          props.class,
+          props.class
         )
       "
-      v-bind="{ ...forwarded, ...$attrs }"
+      v-bind="{
+        ...forwarded,
+        ...$attrs,
+      }"
     >
       <slot />
     </ComboboxInput>

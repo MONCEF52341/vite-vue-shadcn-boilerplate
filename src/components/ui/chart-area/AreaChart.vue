@@ -1,13 +1,13 @@
 <script setup lang="ts" generic="T extends Record<string, any>">
-import type { BaseChartProps } from '.'
-import { type BulletLegendItemInterface, CurveType } from '@unovis/ts'
-import { Area, Axis, Line } from '@unovis/ts'
-import { VisArea, VisAxis, VisLine, VisXYContainer } from '@unovis/vue'
-import { useMounted } from '@vueuse/core'
-import { useId } from 'reka-ui'
-import { type Component, computed, ref } from 'vue'
-import { cn } from '@/lib/utils'
-import { ChartCrosshair, ChartLegend, defaultColors } from '@/components/ui/chart'
+import type { BaseChartProps } from '.';
+import { type BulletLegendItemInterface, CurveType } from '@unovis/ts';
+import { Area, Axis, Line } from '@unovis/ts';
+import { VisArea, VisAxis, VisLine, VisXYContainer } from '@unovis/vue';
+import { useMounted } from '@vueuse/core';
+import { useId } from 'reka-ui';
+import { type Component, computed, ref } from 'vue';
+import { cn } from '@/lib/utils';
+import { ChartCrosshair, ChartLegend, defaultColors } from '@/components/ui/chart';
 
 const props = withDefaults(
   defineProps<
@@ -15,57 +15,62 @@ const props = withDefaults(
       /**
        * Render custom tooltip component.
        */
-      customTooltip?: Component
+      customTooltip?: Component;
       /**
        * Type of curve
        */
-      curveType?: CurveType
+      curveType?: CurveType;
       /**
        * Controls the visibility of gradient.
        * @default true
        */
-      showGradiant?: boolean
+      showGradiant?: boolean;
     }
   >(),
   {
     curveType: CurveType.MonotoneX,
     filterOpacity: 0.2,
-    margin: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
+    margin: () => ({
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+    }),
     showXAxis: true,
     showYAxis: true,
     showTooltip: true,
     showLegend: true,
     showGridLine: true,
     showGradiant: true,
-  },
-)
+  }
+);
 
 const emits = defineEmits<{
-  legendItemClick: [d: BulletLegendItemInterface, i: number]
-}>()
+  legendItemClick: [d: BulletLegendItemInterface, i: number];
+}>();
 
-type KeyOfT = Extract<keyof T, string>
-type Data = (typeof props.data)[number]
+type KeyOfT = Extract<keyof T, string>;
+type Data = (typeof props.data)[number];
 
-const chartRef = useId()
+const chartRef = useId();
 
-const index = computed(() => props.index as KeyOfT)
+const index = computed(() => props.index as KeyOfT);
 const colors = computed(() =>
-  props.colors?.length ? props.colors : defaultColors(props.categories.length),
-)
+  props.colors?.length ? props.colors : defaultColors(props.categories.length)
+);
 
 const legendItems = ref<BulletLegendItemInterface[]>(
   props.categories.map((category, i) => ({
     name: category,
     color: colors.value[i],
     inactive: false,
-  })),
-)
+  }))
+);
 
-const isMounted = useMounted()
+const isMounted = useMounted();
 
 function handleLegendItemClick(d: BulletLegendItemInterface, i: number) {
-  emits('legendItemClick', d, i)
+  emits('legendItemClick', d, i);
 }
 </script>
 
@@ -78,8 +83,13 @@ function handleLegendItemClick(d: BulletLegendItemInterface, i: number) {
     />
 
     <VisXYContainer
-      :style="{ height: isMounted ? '100%' : 'auto' }"
-      :margin="{ left: 20, right: 20 }"
+      :style="{
+        height: isMounted ? '100%' : 'auto',
+      }"
+      :margin="{
+        left: 20,
+        right: 20,
+      }"
       :data="data"
     >
       <svg width="0" height="0">

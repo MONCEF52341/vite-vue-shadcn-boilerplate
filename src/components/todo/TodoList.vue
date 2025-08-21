@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import TodoItem from './TodoItem.vue'
+import TodoItem from './TodoItem.vue';
 
 defineProps<{
-  items: { id: string; title: string; completed: boolean }[]
-}>()
+  items: {
+    id: string;
+    title: string;
+    completed: boolean;
+  }[];
+}>();
 defineEmits<{
-  (e: 'toggle', id: string): void
-  (e: 'remove', id: string): void
-}>()
+  (e: 'toggle', id: string): void;
+  (e: 'remove', id: string): void;
+}>();
 </script>
 
 <template>

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button'
-import { useAuthStore } from '@/stores/auth'
-import { computed } from 'vue'
-import { RouterLink, RouterView } from 'vue-router'
+import { Button } from '@/components/ui/button';
+import { useAuthStore } from '@/stores/auth';
+import { computed } from 'vue';
+import { RouterLink, RouterView } from 'vue-router';
 
-const authStore = useAuthStore()
-const isAuthenticated = computed(() => authStore.isAuthenticated)
+const authStore = useAuthStore();
+const isAuthenticated = computed(() => authStore.isAuthenticated);
 
 async function handleAuthClick() {
   if (authStore.isAuthenticated) {
-    await authStore.logout()
+    await authStore.logout();
   } else {
-    await authStore.login('demo@example.com', 'password')
+    await authStore.login('demo@example.com', 'password');
   }
 }
 </script>

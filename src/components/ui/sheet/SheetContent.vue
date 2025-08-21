@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import type { DialogContentEmits, DialogContentProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
-import { reactiveOmit } from '@vueuse/core'
-import { X } from 'lucide-vue-next'
-import { DialogClose, DialogContent, DialogPortal, useForwardPropsEmits } from 'reka-ui'
-import { cn } from '@/lib/utils'
-import SheetOverlay from './SheetOverlay.vue'
+import type { DialogContentEmits, DialogContentProps } from 'reka-ui';
+import type { HTMLAttributes } from 'vue';
+import { reactiveOmit } from '@vueuse/core';
+import { X } from 'lucide-vue-next';
+import { DialogClose, DialogContent, DialogPortal, useForwardPropsEmits } from 'reka-ui';
+import { cn } from '@/lib/utils';
+import SheetOverlay from './SheetOverlay.vue';
 
 interface SheetContentProps extends DialogContentProps {
-  class?: HTMLAttributes['class']
-  side?: 'top' | 'right' | 'bottom' | 'left'
+  class?: HTMLAttributes['class'];
+  side?: 'top' | 'right' | 'bottom' | 'left';
 }
 
 defineOptions({
   inheritAttrs: false,
-})
+});
 
 const props = withDefaults(defineProps<SheetContentProps>(), {
   side: 'right',
-})
-const emits = defineEmits<DialogContentEmits>()
+});
+const emits = defineEmits<DialogContentEmits>();
 
-const delegatedProps = reactiveOmit(props, 'class', 'side')
+const delegatedProps = reactiveOmit(props, 'class', 'side');
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(delegatedProps, emits);
 </script>
 
 <template>
@@ -42,10 +42,13 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
             'data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top inset-x-0 top-0 h-auto border-b',
           side === 'bottom' &&
             'data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t',
-          props.class,
+          props.class
         )
       "
-      v-bind="{ ...forwarded, ...$attrs }"
+      v-bind="{
+        ...forwarded,
+        ...$attrs,
+      }"
     >
       <slot />
 

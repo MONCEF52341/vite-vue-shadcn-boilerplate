@@ -1,16 +1,20 @@
 <script setup lang="ts">
-import type { NumberFieldIncrementProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
-import { reactiveOmit } from '@vueuse/core'
-import { Plus } from 'lucide-vue-next'
-import { NumberFieldIncrement, useForwardProps } from 'reka-ui'
-import { cn } from '@/lib/utils'
+import type { NumberFieldIncrementProps } from 'reka-ui';
+import type { HTMLAttributes } from 'vue';
+import { reactiveOmit } from '@vueuse/core';
+import { Plus } from 'lucide-vue-next';
+import { NumberFieldIncrement, useForwardProps } from 'reka-ui';
+import { cn } from '@/lib/utils';
 
-const props = defineProps<NumberFieldIncrementProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<
+  NumberFieldIncrementProps & {
+    class?: HTMLAttributes['class'];
+  }
+>();
 
-const delegatedProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, 'class');
 
-const forwarded = useForwardProps(delegatedProps)
+const forwarded = useForwardProps(delegatedProps);
 </script>
 
 <template>
@@ -20,7 +24,7 @@ const forwarded = useForwardProps(delegatedProps)
     :class="
       cn(
         'absolute top-1/2 -translate-y-1/2 right-0 disabled:cursor-not-allowed disabled:opacity-20 p-3',
-        props.class,
+        props.class
       )
     "
   >

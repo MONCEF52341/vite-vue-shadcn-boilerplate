@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import type { FieldProps } from './interface'
+import type { FieldProps } from './interface';
 import {
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import AutoFormLabel from './AutoFormLabel.vue'
-import { beautifyObjectName } from './utils'
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import AutoFormLabel from './AutoFormLabel.vue';
+import { beautifyObjectName } from './utils';
 
 defineOptions({
   inheritAttrs: false,
-})
+});
 
-defineProps<FieldProps>()
+defineProps<FieldProps>();
 </script>
 
 <template>
@@ -28,7 +28,10 @@ defineProps<FieldProps>()
         <slot v-bind="slotProps">
           <Input
             type="number"
-            v-bind="{ ...slotProps.componentField, ...config?.inputProps }"
+            v-bind="{
+              ...slotProps.componentField,
+              ...config?.inputProps,
+            }"
             :disabled="config?.inputProps?.disabled ?? disabled"
           />
         </slot>

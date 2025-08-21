@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import type { PrimitiveProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
-import { Primitive } from 'reka-ui'
-import { cn } from '@/lib/utils'
+import type { PrimitiveProps } from 'reka-ui';
+import type { HTMLAttributes } from 'vue';
+import { Primitive } from 'reka-ui';
+import { cn } from '@/lib/utils';
 
 const props = withDefaults(
   defineProps<
     PrimitiveProps & {
-      showOnHover?: boolean
-      class?: HTMLAttributes['class']
+      showOnHover?: boolean;
+      class?: HTMLAttributes['class'];
     }
   >(),
   {
     as: 'button',
-  },
-)
+  }
+);
 </script>
 
 <template>
@@ -31,7 +31,7 @@ const props = withDefaults(
         'group-data-[collapsible=icon]:hidden',
         showOnHover &&
           'peer-data-[active=true]/menu-button:text-sidebar-accent-foreground group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 data-[state=open]:opacity-100 md:opacity-0',
-        props.class,
+        props.class
       )
     "
     :as="as"

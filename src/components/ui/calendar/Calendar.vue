@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { CalendarRootEmits, CalendarRootProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
-import { reactiveOmit } from '@vueuse/core'
-import { CalendarRoot, useForwardPropsEmits } from 'reka-ui'
-import { cn } from '@/lib/utils'
+import type { CalendarRootEmits, CalendarRootProps } from 'reka-ui';
+import type { HTMLAttributes } from 'vue';
+import { reactiveOmit } from '@vueuse/core';
+import { CalendarRoot, useForwardPropsEmits } from 'reka-ui';
+import { cn } from '@/lib/utils';
 import {
   CalendarCell,
   CalendarCellTrigger,
@@ -16,14 +16,18 @@ import {
   CalendarHeading,
   CalendarNextButton,
   CalendarPrevButton,
-} from '.'
+} from '.';
 
-const props = defineProps<CalendarRootProps & { class?: HTMLAttributes['class'] }>()
-const emits = defineEmits<CalendarRootEmits>()
+const props = defineProps<
+  CalendarRootProps & {
+    class?: HTMLAttributes['class'];
+  }
+>();
+const emits = defineEmits<CalendarRootEmits>();
 
-const delegatedProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, 'class');
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(delegatedProps, emits);
 </script>
 
 <template>

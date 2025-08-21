@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import TicTacToeCell from './TicTacToeCell.vue'
+import TicTacToeCell from './TicTacToeCell.vue';
 
-defineProps<{ cells: ('X' | 'O' | null)[] }>()
-defineEmits<{ (e: 'move', index: number): void }>()
+defineProps<{
+  cells: ('X' | 'O' | null)[];
+}>();
+defineEmits<{
+  (e: 'move', index: number): void;
+}>();
 </script>
 
 <template>

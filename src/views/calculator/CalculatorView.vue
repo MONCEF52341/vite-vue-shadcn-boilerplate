@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import CalculatorDisplay from '@/components/calculator/CalculatorDisplay.vue'
-import CalculatorKeypad from '@/components/calculator/CalculatorKeypad.vue'
-import { useCalculatorStore } from '@/stores/calculator'
+import CalculatorDisplay from '@/components/calculator/CalculatorDisplay.vue';
+import CalculatorKeypad from '@/components/calculator/CalculatorKeypad.vue';
+import { useCalculatorStore } from '@/stores/calculator';
 
-const calc = useCalculatorStore()
+const calc = useCalculatorStore();
 </script>
 
 <template>

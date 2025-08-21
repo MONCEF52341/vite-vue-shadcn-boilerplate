@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import TodoInput from '@/components/todo/TodoInput.vue'
-import TodoList from '@/components/todo/TodoList.vue'
-import { Button } from '@/components/ui/button'
-import { useTodoStore, type TodoFilter } from '@/stores/todo'
+import TodoInput from '@/components/todo/TodoInput.vue';
+import TodoList from '@/components/todo/TodoList.vue';
+import { Button } from '@/components/ui/button';
+import { useTodoStore, type TodoFilter } from '@/stores/todo';
 
-const todo = useTodoStore()
+const todo = useTodoStore();
 
 function add(title: string) {
-  todo.addTodo(title)
+  todo.addTodo(title);
 }
 
 function setFilter(f: TodoFilter) {
-  todo.setFilter(f)
+  todo.setFilter(f);
 }
 </script>
 

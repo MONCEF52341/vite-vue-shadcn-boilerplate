@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import type { FieldProps } from './interface'
+import type { FieldProps } from './interface';
 import {
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormMessage,
-} from '@/components/ui/form'
-import { Label } from '@/components/ui/label'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+} from '@/components/ui/form';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select'
-import AutoFormLabel from './AutoFormLabel.vue'
-import { beautifyObjectName, maybeBooleanishToBoolean } from './utils'
+} from '@/components/ui/select';
+import AutoFormLabel from './AutoFormLabel.vue';
+import { beautifyObjectName, maybeBooleanishToBoolean } from './utils';
 
 defineProps<
   FieldProps & {
-    options?: string[]
+    options?: string[];
   }
->()
+>();
 </script>
 
 <template>
@@ -38,7 +38,9 @@ defineProps<
             v-if="config?.component === 'radio'"
             :disabled="maybeBooleanishToBoolean(config?.inputProps?.disabled) ?? disabled"
             :orientation="'vertical'"
-            v-bind="{ ...slotProps.componentField }"
+            v-bind="{
+              ...slotProps.componentField,
+            }"
           >
             <div
               v-for="(option, index) in options"
@@ -53,7 +55,9 @@ defineProps<
           <Select
             v-else
             :disabled="maybeBooleanishToBoolean(config?.inputProps?.disabled) ?? disabled"
-            v-bind="{ ...slotProps.componentField }"
+            v-bind="{
+              ...slotProps.componentField,
+            }"
           >
             <SelectTrigger class="w-full">
               <SelectValue :placeholder="config?.inputProps?.placeholder" />
