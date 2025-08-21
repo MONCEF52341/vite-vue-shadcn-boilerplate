@@ -1,4 +1,5 @@
 import AboutPage from '@/pages/AboutPage.vue'
+import CalculatorPage from '@/pages/CalculatorPage.vue'
 import CounterPage from '@/pages/CounterPage.vue'
 import HomePage from '@/pages/HomePage.vue'
 import NotFoundPage from '@/pages/NotFoundPage.vue'
@@ -11,6 +12,7 @@ const router = createRouter({
     { path: '/', name: 'home', component: HomePage },
     { path: '/about', name: 'about', component: AboutPage },
     { path: '/counter', name: 'counter', component: CounterPage, meta: { requiresAuth: true } },
+    { path: '/calculator', name: 'calculator', component: CalculatorPage },
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundPage },
   ],
 })
