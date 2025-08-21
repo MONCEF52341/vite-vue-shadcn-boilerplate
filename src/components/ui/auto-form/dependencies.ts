@@ -23,7 +23,7 @@ export default function useDependencies(fieldName: string) {
   const overrideOptions = ref<EnumValues | undefined>();
 
   const currentFieldDependencies = computed(() =>
-    dependencies.value?.filter((dependency) => dependency.targetField === currentFieldName)
+    dependencies.value?.filter((dependency) => dependency.targetField === currentFieldName),
   );
 
   function getSourceValue(dep: Dependency<any>) {
@@ -53,7 +53,7 @@ export default function useDependencies(fieldName: string) {
   }
 
   const sourceFieldValues = computed(() =>
-    currentFieldDependencies.value?.map((dep) => getSourceValue(dep))
+    currentFieldDependencies.value?.map((dep) => getSourceValue(dep)),
   );
 
   const resetConditionState = () => {
@@ -94,7 +94,7 @@ export default function useDependencies(fieldName: string) {
     {
       immediate: true,
       deep: true,
-    }
+    },
   );
 
   return {

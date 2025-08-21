@@ -21,8 +21,8 @@ export const useTicTacToeStore = defineStore('tictactoe', () => {
       {
         length: 9,
       },
-      () => null
-    )
+      () => null,
+    ),
   );
   const currentPlayer = ref<Player>('X');
   const winner = ref<Player | 'Draw' | null>(null);
@@ -40,7 +40,7 @@ export const useTicTacToeStore = defineStore('tictactoe', () => {
       {
         length: 9,
       },
-      () => null
+      () => null,
     );
     currentPlayer.value = 'X';
     winner.value = null;

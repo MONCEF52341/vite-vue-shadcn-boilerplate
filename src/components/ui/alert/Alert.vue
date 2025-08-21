@@ -18,7 +18,7 @@ const props = defineProps<{
         alertVariants({
           variant,
         }),
-        props.class
+        props.class,
       )
     "
     role="alert"

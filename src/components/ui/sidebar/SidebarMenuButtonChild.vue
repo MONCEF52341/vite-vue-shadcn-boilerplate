@@ -32,7 +32,7 @@ const props = withDefaults(defineProps<SidebarMenuButtonProps>(), {
           variant,
           size,
         }),
-        props.class
+        props.class,
       )
     "
     :as="as"

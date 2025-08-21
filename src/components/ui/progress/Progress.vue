@@ -13,7 +13,7 @@ const props = withDefaults(
   >(),
   {
     modelValue: 0,
-  }
+  },
 );
 
 const delegatedProps = reactiveOmit(props, 'class');

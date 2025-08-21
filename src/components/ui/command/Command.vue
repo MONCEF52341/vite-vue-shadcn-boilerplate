@@ -15,7 +15,7 @@ const props = withDefaults(
   >(),
   {
     modelValue: '',
-  }
+  },
 );
 
 const emits = defineEmits<ListboxRootEmits>();
@@ -81,7 +81,7 @@ watch(
   () => filterState.search,
   () => {
     filterItems();
-  }
+  },
 );
 
 provideCommandContext({
@@ -98,7 +98,7 @@ provideCommandContext({
     :class="
       cn(
         'bg-popover text-popover-foreground flex h-full w-full flex-col overflow-hidden rounded-md',
-        props.class
+        props.class,
       )
     "
   >

@@ -16,7 +16,7 @@ const props = withDefaults(
   {
     variant: 'outline',
     size: 'icon',
-  }
+  },
 );
 
 const { orientation, canScrollNext, scrollNext } = useCarousel();
@@ -32,7 +32,7 @@ const { orientation, canScrollNext, scrollNext } = useCarousel();
         orientation === 'horizontal'
           ? 'top-1/2 -right-12 -translate-y-1/2'
           : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
-        props.class
+        props.class,
       )
     "
     :variant="variant"

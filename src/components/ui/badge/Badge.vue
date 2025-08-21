@@ -25,7 +25,7 @@ const delegatedProps = reactiveOmit(props, 'class');
         badgeVariants({
           variant,
         }),
-        props.class
+        props.class,
       )
     "
     v-bind="delegatedProps"

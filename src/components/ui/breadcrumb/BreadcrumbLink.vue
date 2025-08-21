@@ -12,7 +12,7 @@ const props = withDefaults(
   >(),
   {
     as: 'a',
-  }
+  },
 );
 </script>
 

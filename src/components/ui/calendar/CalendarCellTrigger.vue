@@ -14,7 +14,7 @@ const props = withDefaults(
   >(),
   {
     as: 'button',
-  }
+  },
 );
 
 const delegatedProps = reactiveOmit(props, 'class');
@@ -40,7 +40,7 @@ const forwardedProps = useForwardProps(delegatedProps);
         'data-[unavailable]:text-destructive-foreground data-[unavailable]:line-through',
         // Outside months
         'data-[outside-view]:text-muted-foreground',
-        props.class
+        props.class,
       )
     "
     v-bind="forwardedProps"

@@ -17,7 +17,7 @@ const { orientation } = useCarousel();
       cn(
         'min-w-0 shrink-0 grow-0 basis-full',
         orientation === 'horizontal' ? 'pl-4' : 'pt-4',
-        props.class
+        props.class,
       )
     "
   >

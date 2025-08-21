@@ -14,7 +14,7 @@ const props = withDefaults(
   }>(),
   {
     colors: () => [],
-  }
+  },
 );
 
 // Use weakmap to store reference to each datapoint for Tooltip

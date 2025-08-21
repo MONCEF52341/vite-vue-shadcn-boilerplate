@@ -43,7 +43,7 @@ const df = new DateFormatter('en-US', {
                   :class="
                     cn(
                       'w-full justify-start text-left font-normal',
-                      !slotProps.componentField.modelValue && 'text-muted-foreground'
+                      !slotProps.componentField.modelValue && 'text-muted-foreground',
                     )
                   "
                 >

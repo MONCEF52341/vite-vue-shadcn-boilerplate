@@ -14,7 +14,7 @@ const props = withDefaults(
   {
     orientation: 'horizontal',
     decorative: true,
-  }
+  },
 );
 
 const delegatedProps = reactiveOmit(props, 'class');
@@ -27,7 +27,7 @@ const delegatedProps = reactiveOmit(props, 'class');
     :class="
       cn(
         `bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px`,
-        props.class
+        props.class,
       )
     "
   />

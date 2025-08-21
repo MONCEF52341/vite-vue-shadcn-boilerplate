@@ -13,7 +13,7 @@ const props = withDefaults(
   >(),
   {
     modelValue: () => [],
-  }
+  },
 );
 const emits = defineEmits<PinInputRootEmits>();
 

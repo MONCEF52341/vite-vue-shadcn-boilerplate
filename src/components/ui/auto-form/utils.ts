@@ -34,7 +34,7 @@ export function getIndexIfArray(string: string) {
  * This will unpack optionals, refinements, etc.
  */
 export function getBaseSchema<ChildType extends z.ZodAny | z.AnyZodObject = z.ZodAny>(
-  schema: ChildType | z.ZodEffects<ChildType>
+  schema: ChildType | z.ZodEffects<ChildType>,
 ): ChildType | null {
   if (!schema) return null;
   if ('innerType' in schema._def) return getBaseSchema(schema._def.innerType as ChildType);
@@ -130,17 +130,17 @@ function cleanupNonNestedPath(path: string) {
  */
 export function getFromPath<TValue = unknown>(
   object: NestedRecord | undefined,
-  path: string
+  path: string,
 ): TValue | undefined;
 export function getFromPath<TValue = unknown, TFallback = TValue>(
   object: NestedRecord | undefined,
   path: string,
-  fallback?: TFallback
+  fallback?: TFallback,
 ): TValue | TFallback;
 export function getFromPath<TValue = unknown, TFallback = TValue>(
   object: NestedRecord | undefined,
   path: string,
-  fallback?: TFallback
+  fallback?: TFallback,
 ): TValue | TFallback | undefined {
   if (!object) return fallback;
 

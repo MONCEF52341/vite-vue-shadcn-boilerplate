@@ -24,7 +24,7 @@ const delegatedProps = reactiveOmit(props, 'class');
           variant: 'outline',
         }),
         'mt-2 sm:mt-0',
-        props.class
+        props.class,
       )
     "
   >

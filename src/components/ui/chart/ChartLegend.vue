@@ -11,7 +11,7 @@ const props = withDefaults(
   }>(),
   {
     items: () => [],
-  }
+  },
 );
 
 const emits = defineEmits<{
@@ -49,7 +49,7 @@ function onLegendItemClick(d: BulletLegendItemInterface, i: number) {
       props.items.map((item) => ({
         ...item,
         inactive: false,
-      }))
+      })),
     );
   } else {
     // apply selection, set other item as inactive
@@ -64,8 +64,8 @@ function onLegendItemClick(d: BulletLegendItemInterface, i: number) {
           : {
               ...item,
               inactive: true,
-            }
-      )
+            },
+      ),
     );
   }
   keepStyling();

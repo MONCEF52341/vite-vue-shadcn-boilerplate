@@ -28,7 +28,7 @@ const props = withDefaults(defineProps<Props>(), {
           variant,
           size,
         }),
-        props.class
+        props.class,
       )
     "
   >

@@ -35,7 +35,7 @@ const props = withDefaults(
     showTooltip: true,
     showLegend: true,
     showGridLine: true,
-  }
+  },
 );
 
 const emits = defineEmits<{
@@ -47,7 +47,7 @@ type Data = (typeof props.data)[number];
 
 const index = computed(() => props.index as KeyOfT);
 const colors = computed(() =>
-  props.colors?.length ? props.colors : defaultColors(props.categories.length)
+  props.colors?.length ? props.colors : defaultColors(props.categories.length),
 );
 
 const legendItems = ref<BulletLegendItemInterface[]>(
@@ -55,7 +55,7 @@ const legendItems = ref<BulletLegendItemInterface[]>(
     name: category,
     color: colors.value[i],
     inactive: false,
-  }))
+  })),
 );
 
 const isMounted = useMounted();
