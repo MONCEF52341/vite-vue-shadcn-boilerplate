@@ -1,0 +1,110 @@
+# Vue.js Project Naming Conventions & Architecture Rules
+
+## File Structure & Naming
+
+### Pages (Router Components)
+- **Location**: `src/pages/`
+- **Naming**: PascalCase with `Page` suffix
+- **Examples**: `HomePage.vue`, `AboutPage.vue`, `UserProfilePage.vue`
+- **Purpose**: Only components used directly by the router
+
+### Views (Page Composition)
+- **Location**: `src/views/<domain>/`
+- **Naming**: PascalCase with `View` suffix
+- **Examples**: `HomeView.vue`, `CounterView.vue`, `UserListView.vue`
+- **Purpose**: Page composition blocks with UI logic but no routing
+
+### Components (Reusable UI)
+- **Location**: `src/components/**`
+- **Naming**: PascalCase, multi-word names (no single-word except `App`, `Button`)
+- **Examples**: `UserCard.vue`, `ProductGrid.vue`, `NavigationBar.vue`
+- **UI Library**: `src/components/ui/**` for shadcn-style primitives
+
+### Layouts
+- **Location**: `src/layouts/`
+- **Naming**: PascalCase with `Layout` suffix
+- **Examples**: `DefaultLayout.vue`, `AdminLayout.vue`
+
+### Stores (Pinia)
+- **Location**: `src/stores/`
+- **Composable naming**: `use<Name>Store`
+- **Store ID**: kebab-case or simple string
+- **Examples**: `useAuthStore`, `useCounterStore`
+
+### Tests
+- **Location**: `src/__tests__/`
+- **Naming**: `*.spec.ts`, mirror the subject under test
+
+## Architecture Rules
+
+### Component Hierarchy
+```
+App → Layout(s) → RouterView → Page → View(s) → Component(s)
+```
+
+### Import Rules
+- Use `@` alias for absolute imports
+- Pages import Views
+- Views import Components
+- Router imports Pages only
+
+### State Management
+- Pinia stores in `src/stores/`
+- Pages/Views read from stores
+- Components receive props and emit events
+
+### Routing
+- All routes map to Pages (`src/pages`)
+- Route names: simple, unique strings
+- Guards and navigation logic in `src/router/index.ts` only
+
+## Enforcement Rules
+
+1. **Multi-word component names** are mandatory (except `App`, `Button`)
+2. **Route components MUST be Pages**, never Views/Components
+3. **No direct router/pinia coupling** in Components
+4. **Keep shadcn primitives** in `src/components/ui/**`
+5. **No business logic** in UI primitives
+
+## Code Examples
+
+### ✅ Correct Page
+```vue
+<!-- src/pages/UserProfilePage.vue -->
+<template>
+  <UserProfileView />
+</template>
+```
+
+### ✅ Correct View
+```vue
+<!-- src/views/user/UserProfileView.vue -->
+<template>
+  <UserCard :user="user" />
+  <UserSettings />
+</template>
+```
+
+### ✅ Correct Component
+```vue
+<!-- src/components/UserCard.vue -->
+<template>
+  <div class="user-card">
+    <h3>{{ user.name }}</h3>
+  </div>
+</template>
+```
+
+### ❌ Incorrect (Single-word component)
+```vue
+<!-- src/components/Card.vue - WRONG -->
+```
+
+### ❌ Incorrect (View in router)
+```vue
+<!-- router using UserProfileView - WRONG -->
+```
+description:
+globs:
+alwaysApply: false
+---
