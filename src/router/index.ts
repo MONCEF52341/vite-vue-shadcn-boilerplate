@@ -5,6 +5,7 @@ import HomePage from '@/pages/HomePage.vue';
 import NotFoundPage from '@/pages/NotFoundPage.vue';
 import TicTacToePage from '@/pages/TicTacToePage.vue';
 import TodosPage from '@/pages/TodosPage.vue';
+import VueUseDemoPage from '@/pages/VueUseDemoPage.vue';
 import { useAuthStore } from '@/stores/auth';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -43,6 +44,11 @@ const router = createRouter({
       path: '/todos',
       name: 'todos',
       component: TodosPage,
+    },
+    {
+      path: '/vue-use',
+      name: 'vue-use-demo',
+      component: VueUseDemoPage,
     },
     {
       path: '/:pathMatch(.*)*',

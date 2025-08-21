@@ -39,6 +39,9 @@ async function handleAuthClick() {
           <Button asChild variant="outline">
             <RouterLink to="/todos">Todos</RouterLink>
           </Button>
+          <Button asChild variant="outline">
+            <RouterLink to="/vue-use">Vue Use Demo</RouterLink>
+          </Button>
         </nav>
         <div class="flex items-center gap-2">
           <Button @click="handleAuthClick">{{ isAuthenticated ? 'Logout' : 'Login' }}</Button>
